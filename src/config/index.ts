@@ -12,20 +12,20 @@ export type SupportLanguage = Record<string, LanguageInfo>
 export const projectTitle = 'Insight'
 
 // Local Storage/ Session Storage 的 key 前缀 prefix
-export const storageKeyPrefix = 'ballcat-admin/'
+export const storageKeyPrefix = 'Insight-dashboard/'
 
 // 开启 websocket，开启此选项需要服务端同步支持 websocket 功能
 // 若服务端不支持，则本地启动时，抛出 socket 异常，导致 proxyServer 关闭
-export const enableWebsocket = true
+export const enableWebsocket = false
 
 // 开启布局设置
-export const enableLayoutSetting = true
+export const enableLayoutSetting = false
 
 // 开启登录验证码
-export const enableLoginCaptcha = true
+export const enableLoginCaptcha = false
 
 // 是否开启国际化
-export const enableI18n = true
+export const enableI18n = false
 // 项目默认语言
 export const defaultLanguage = 'zh-CN'
 // 支持的语言信息
@@ -53,11 +53,11 @@ export const loginPath = '/login'
 
 /* 应用设置 */
 export const appSettings: ProSettings = {
-  navTheme: 'dark',
-  headerTheme: 'dark',
+  navTheme: 'light',
+  headerTheme: 'light',
   layout: 'side',
   contentWidth: 'Fluid',
-  fixedHeader: false,
+  fixedHeader: true,
   fixSiderbar: true,
   headerHeight: 48,
   iconfontUrl: '',

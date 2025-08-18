@@ -56,7 +56,7 @@
 
     <template #multiTabRender="props">
       <!-- 公告彩条 -->
-      <announcement-ribbon />
+<!--      <announcement-ribbon />-->
       <multi-tab v-bind="props" @fullscreen-change="handleFullScreenChange" />
     </template>
 
@@ -65,9 +65,9 @@
       <router-layout />
     </template>
 
-    <template #footerRender>
-      <ballcat-footer />
-    </template>
+<!--    <template #footerRender>-->
+<!--      <ballcat-footer />-->
+<!--    </template>-->
   </pro-layout>
 
   <setting-drawer
@@ -78,7 +78,7 @@
 </template>
 
 <script setup lang="ts">
-import BallcatFooter from '@/layouts/components/Footer/BallcatFooter.vue'
+// import BallcatFooter from '@/layouts/components/Footer/BallcatFooter.vue'
 import ProLayout from '#/layout/BasicLayout'
 import SettingDrawer from '#/layout/components/SettingDrawer'
 import MultiTab from '@/layouts/components/MultiTab'
@@ -87,7 +87,7 @@ import type { Key } from 'ant-design-vue/es/_util/type'
 import RouterLayout from '@/layouts/RouterLayout.vue'
 import { projectTitle, enableLayoutSetting, enableWebsocket } from '@/config'
 import RightContent from '@/layouts/components/RightContent/index.vue'
-import AnnouncementRibbon from '@/components/Notify/AnnouncementRibbon.vue'
+// import AnnouncementRibbon from '@/components/Notify/AnnouncementRibbon.vue'
 import useAdminWebSocket from '@/hooks/websocket'
 import router from '@/router'
 import { emitter } from '@/hooks/mitt'

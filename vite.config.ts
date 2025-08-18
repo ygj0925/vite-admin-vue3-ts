@@ -36,6 +36,9 @@ export default defineConfig({
           return path.replace(/^\/api/, '')
         }
       }
+    },
+    hmr: {
+      overlay: false
     }
   },
   plugins: [
