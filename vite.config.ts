@@ -4,7 +4,6 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
-
 // 自动导入 vue 组件，无需手动 import
 import AutoImport from 'unplugin-auto-import/vite'
 

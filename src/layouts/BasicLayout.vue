@@ -22,31 +22,31 @@
       <right-content />
     </template>
 
-    <template #menuFooterRender="props">
-      <a
-        :style="{
-          display: 'flex',
-          height: '16px',
-          color: 'rgba(255, 255, 255, 0.65)',
-          alignItems: 'center'
-        }"
-        href="https://preview.pro.ant.design/dashboard/analysis"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img
-          alt="pro-logo"
-          src="https://procomponents.ant.design/favicon.ico"
-          :style="{
-            width: '16px',
-            height: '16px',
-            margin: '0 16px',
-            marginRight: 10
-          }"
-        />
-        <template v-if="!props?.collapsed"> Preview Pro</template>
-      </a>
-    </template>
+    <!--    <template #menuFooterRender="props">-->
+    <!--      <a-->
+    <!--        :style="{-->
+    <!--          display: 'flex',-->
+    <!--          height: '16px',-->
+    <!--          color: 'rgba(255, 255, 255, 0.65)',-->
+    <!--          alignItems: 'center'-->
+    <!--        }"-->
+    <!--        href="https://preview.pro.ant.design/dashboard/analysis"-->
+    <!--        target="_blank"-->
+    <!--        rel="noreferrer"-->
+    <!--      >-->
+    <!--        <img-->
+    <!--          alt="pro-logo"-->
+    <!--          src="https://procomponents.ant.design/favicon.ico"-->
+    <!--          :style="{-->
+    <!--            width: '16px',-->
+    <!--            height: '16px',-->
+    <!--            margin: '0 16px',-->
+    <!--            marginRight: 10-->
+    <!--          }"-->
+    <!--        />-->
+    <!--        <template v-if="!props?.collapsed"> Preview Pro</template>-->
+    <!--      </a>-->
+    <!--    </template>-->
 
     <!--    <template #headerContentRender>-->
     <!--      header-->
@@ -56,7 +56,7 @@
 
     <template #multiTabRender="props">
       <!-- 公告彩条 -->
-<!--      <announcement-ribbon />-->
+      <!--      <announcement-ribbon />-->
       <multi-tab v-bind="props" @fullscreen-change="handleFullScreenChange" />
     </template>
 
@@ -65,9 +65,9 @@
       <router-layout />
     </template>
 
-<!--    <template #footerRender>-->
-<!--      <ballcat-footer />-->
-<!--    </template>-->
+    <!--    <template #footerRender>-->
+    <!--      <ballcat-footer />-->
+    <!--    </template>-->
   </pro-layout>
 
   <setting-drawer
@@ -99,7 +99,6 @@ enableWebsocket && useAdminWebSocket()
 const collapsed = ref(false)
 const toggleCollapsed = (isCollapsed: boolean) => {
   collapsed.value = isCollapsed
-  console.log(collapsed.value)
 }
 
 // 设置弹窗的控制
@@ -138,7 +137,10 @@ watchEffect(() => {
 
 const routes = ref<RouteRecordNormalized[]>([])
 function setRoutes() {
-  return (routes.value = router.getRoutes())
+  // 断言类型，避免类型递归
+  routes.value = router.getRoutes() as RouteRecordNormalized[]
+  return routes.value
+  // return (routes.value = router.getRoutes())
 }
 setRoutes()
 emitter.on('switch-language', setRoutes)

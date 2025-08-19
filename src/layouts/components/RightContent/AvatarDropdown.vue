@@ -4,23 +4,28 @@
   </span>
   <header-dropdown v-else overlay-class-name="avatar-dropdown">
     <span :class="[$style.action, $style.account]">
-      <a-avatar size="small" :class="$style.avatar" :src="currentUser.avatar" alt="avatar" />
+      <a-avatar
+        size="small"
+        :class="$style.avatar"
+        src="https://i.111666.best/image/6kc73OWECFRxhkY9kEHZ5w.png"
+        alt="avatar"
+      />
       <span :class="[$style.name, 'anticon']">{{ currentUser.nickname }}</span>
     </span>
 
     <template #overlay>
       <a-menu :class="$style.menu" @click="onMenuClick">
-        <template v-if="props.menu">
-          <a-menu-item key="center">
-            <UserOutlined />
-            个人中心
-          </a-menu-item>
-          <a-menu-item key="settings">
-            <SettingOutlined />
-            个人设置
-          </a-menu-item>
-          <a-menu-divider style="margin: 4px 0" />
-        </template>
+        <!--        <template v-if="props.menu">-->
+        <!--          <a-menu-item key="center">-->
+        <!--            <UserOutlined />-->
+        <!--            个人中心-->
+        <!--          </a-menu-item>-->
+        <!--          <a-menu-item key="settings">-->
+        <!--            <SettingOutlined />-->
+        <!--            个人设置-->
+        <!--          </a-menu-item>-->
+        <!--          <a-menu-divider style="margin: 4px 0" />-->
+        <!--        </template>-->
 
         <a-menu-item key="logout">
           <LogoutOutlined />

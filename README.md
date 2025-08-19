@@ -11,6 +11,7 @@
 ## 包管理工具
 
 项目强制要求使用 pnpm 进行依赖管理，使用 npm 或者 yarn 下载依赖将会报错。
+
 ```shell
 npm install -g pnpm
 pnpm install

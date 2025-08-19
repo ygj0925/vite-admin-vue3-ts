@@ -1,6 +1,5 @@
 <template>
   <a-space :class="isDark ? [$style.right, $style.dark] : $style.right" :size="0" :style="style">
-
     <!-- 头像下拉框 -->
     <avatar-dropdown />
     <!-- 语言选择框 -->

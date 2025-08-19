@@ -14,7 +14,6 @@
   "system.tip.network.error.message": "网络异常, 请检测您的网络是否通畅!",
   "system.tip.operate.error": "操作异常! {message}",
 
-
   "lov": {
     "selectedData": "已选数据"
   },

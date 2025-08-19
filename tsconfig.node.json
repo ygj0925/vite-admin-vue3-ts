@@ -1,7 +1,9 @@
 {
   "extends": "@tsconfig/node18/tsconfig.json",
-  "include": ["vite.config.*", "./src/utils/resolvers.ts"],
+  "include": ["vite.config.*", "./src/utils/resolvers.ts", "src", "pro-components"],
   "compilerOptions": {
+    "skipLibCheck": true,
+    "disableSizeLimit": true,
     "composite": true,
     "module": "ESNext",
     "types": ["node"]

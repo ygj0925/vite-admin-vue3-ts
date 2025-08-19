@@ -1,6 +1,14 @@
 <template>
-  <a-modal :title="title" :visible="visible" :mask-closable="false" :body-style="{ paddingBottom: '8px' }"
-    :confirm-loading="submitLoading" :width="450" @ok="handleSubmit" @cancel="handleClose">
+  <a-modal
+    :title="title"
+    :visible="visible"
+    :mask-closable="false"
+    :body-style="{ paddingBottom: '8px' }"
+    :confirm-loading="submitLoading"
+    :width="450"
+    @ok="handleSubmit"
+    @cancel="handleClose"
+  >
     <a-form :model="formModel" :label-col="labelCol" :wrapper-col="wrapperCol">
       <a-form-item label="名称" v-bind="validateInfos.name">
         <a-input v-model:value="formModel.name" placeholder="请输入" />

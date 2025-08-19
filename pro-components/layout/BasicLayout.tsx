@@ -368,7 +368,7 @@ export default defineComponent({
             {siderMenuDom.value}
             <div style={genLayoutStyle} class={'ant-layout'}>
               {headerDom.value}
-              {multiTabDom}
+              {!headerViewProps.value.isMobile ? <>{multiTabDom}</> : null}
               {/*@ts-ignore*/}
               <WrapContent class={contentClassName.value} style={props.contentStyle}>
                 {props.loading ? <PageLoading /> : slots.default?.()}

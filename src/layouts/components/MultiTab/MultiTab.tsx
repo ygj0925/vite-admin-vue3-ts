@@ -40,6 +40,8 @@ const MultiTab = defineComponent({
     const router = useRouter()
     const multiTabStore = useMultiTabStore()
 
+    console.log(props.isMobile, 'props')
+
     /** 添加缓存的组件：嵌套路由时，缓存匹配路由下的所有组件 */
     const addCachedComponentNames = (matchedRoutes: RouteLocationMatched[]) => {
       matchedRoutes.forEach(route => {
