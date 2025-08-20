@@ -6,6 +6,7 @@
     "disableSizeLimit": true,
     "composite": true,
     "module": "ESNext",
+    "baseUrl": ".",
     "types": ["node"]
   }
 }

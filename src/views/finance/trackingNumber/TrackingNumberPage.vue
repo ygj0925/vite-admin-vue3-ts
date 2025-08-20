@@ -178,7 +178,7 @@ const chartData = ref({
   ]
 })
 
-onMounted(async () => {
+onMounted( async () => {
   // 显示 loading
   await nextTick()
   lineChartRef.value?.showLoading()

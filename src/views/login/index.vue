@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="page">
     <!-- 国际化语言切换 -->
     <div class="lang">
       <SelectLanguage />

@@ -21,9 +21,6 @@ export const enableWebsocket = false
 // 开启布局设置
 export const enableLayoutSetting = false
 
-// 开启登录验证码
-export const enableLoginCaptcha = false
-
 // 是否开启国际化
 export const enableI18n = false
 // 项目默认语言

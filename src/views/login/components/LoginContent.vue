@@ -63,9 +63,6 @@
         <a style="float: right"> 注册账户 </a>
       </div>
     </div>
-
-    <!-- 登陆验证码 -->
-    <login-captcha v-if="enableLoginCaptcha" ref="loginCaptchaRef" @success="handleSubmit" />
   </div>
 </template>
 
@@ -75,8 +72,7 @@ import MobileLoginForm from '@/views/login/components/MobileLoginForm.vue'
 import type { LoginFormInstance, LoginType } from '@/views/login/components/types'
 import type { LoginResult } from '@/api/auth/types'
 import { useUserStore } from '@/stores/user-store'
-import { projectTitle, enableLoginCaptcha } from '@/config'
-import { SliderCaptcha as LoginCaptcha } from '@/components/Captcha'
+import { projectTitle } from '@/config'
 import { useAdminI18n } from '@/hooks/i18n'
 
 const { rawI18nText } = useAdminI18n()
@@ -96,9 +92,6 @@ const isLoginError = ref(false)
 const loginErrorMessage = ref('')
 // 自动登录（记住我）
 const rememberMe = ref(false)
-
-// 登陆验证码组件
-const loginCaptchaRef = ref()
 
 // 当前登录类型，以及对应的登录组件
 const currentLoginType = ref<LoginType>('account')
@@ -141,7 +134,7 @@ function store(res: LoginResult) {
 function handleLogin() {
   const loginFormInstance = loginFormRef.value!
   loginFormInstance.validate().then(() => {
-    enableLoginCaptcha ? loginCaptchaRef.value?.show() : handleSubmit()
+    handleSubmit()
   })
 }
 
