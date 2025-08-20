@@ -6,10 +6,6 @@
     "skipLibCheck": true,
     "disableSizeLimit": true,
     "composite": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"],
-      "#/*": ["./pro-components/*"]
-    }
+    "baseUrl": "."
   }
 }

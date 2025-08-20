@@ -104,7 +104,7 @@ const toggleCollapsed = (isCollapsed: boolean) => {
 // 设置弹窗的控制
 const settingDrawerCollapse = ref(false)
 watchEffect(() => {
-  console.log(settingDrawerCollapse.value, '切换了开关')
+  // console.log(settingDrawerCollapse.value, '切换了开关')
 })
 
 // 布局设置
