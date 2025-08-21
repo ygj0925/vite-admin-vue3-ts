@@ -1,6 +1,13 @@
 <template>
-  <div ref="chartsRef" :style="{ width: width, height: height}"></div>
+  <div
+    ref="chartsRef"
+    :style="containerStyle"
+  ></div>
 </template>
+<!-- 
+
+:style="{ width: containerStyle.width, height: containerStyle.height }" 
+-->
 
 <script setup lang="ts">
 import { ref, watch, nextTick, onMounted, onBeforeUnmount } from 'vue'
@@ -88,11 +95,11 @@ onBeforeUnmount(() => {
 })
 
 const containerStyle = computed(() => ({
-      width: typeof props.width === 'number' ? props.width + 'px' : props.width,
-      height: typeof props.height === 'number' ? props.height + 'px' : props.height
-    }))
+  width: typeof props.width === 'number' ? props.width + 'px' : props.width,
+  height: typeof props.height === 'number' ? props.height + 'px' : props.height
+}))
 
-    watch([() => props.width, () => props.height], () => nextTick(() => chartInstance?.resize()))
+watch([() => props.width, () => props.height], () => nextTick(() => chartInstance?.resize()))
 
 watch(
   () => props.data,
