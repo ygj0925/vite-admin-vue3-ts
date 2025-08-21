@@ -5,20 +5,20 @@
     >
       <div class="px-5 pt-5">
         <header class="flex justify-between items-start mb-2">
-          <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100">Acme Plus</h2>
+          <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100">TBU</h2>
           <EditMenu align="right" class="relative inline-flex">
             <li>
               <a
                 class="font-medium text-sm text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200 flex py-1 px-3"
                 href="#0"
-                >Option 1</a
+                >6个月</a
               >
             </li>
             <li>
               <a
                 class="font-medium text-sm text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200 flex py-1 px-3"
                 href="#0"
-                >Option 2</a
+                >一年</a
               >
             </li>
             <li>
@@ -31,7 +31,7 @@
           </EditMenu>
         </header>
         <div class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase mb-1">
-          Sales
+          学术接受度
         </div>
         <div class="flex items-start">
           <div class="text-3xl font-bold text-gray-800 dark:text-gray-100 mr-2">$24,780</div>
@@ -40,8 +40,8 @@
           </div>
         </div>
       </div>
-      <div class="px-5 pb-5 max-sm:max-h-[198px] xl:max-h-[198px]">
-        <LineChart ref="lineChartRef" :data="lineData" width="100" height="178" />
+      <div class="px-5 pb-5 max-sm:max-h-[158px] xl:max-h-[158px]">
+        <LineChart ref="lineChartRef" :data="lineData" width="100%" height="158px" />
       </div>
     </div>
     <div
@@ -49,7 +49,7 @@
     >
       <div class="px-5 pt-5">
         <header class="flex justify-between items-start mb-2">
-          <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100">Acme Plus</h2>
+          <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100">EBU</h2>
           <EditMenu align="right" class="relative inline-flex">
             <li>
               <a
@@ -75,7 +75,7 @@
           </EditMenu>
         </header>
         <div class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase mb-1">
-          Sales
+          学术接受度
         </div>
         <div class="flex items-start">
           <div class="text-3xl font-bold text-gray-800 dark:text-gray-100 mr-2">$24,780</div>
@@ -116,69 +116,8 @@ const lineChartRef = ref<LineChartExposed | null>(null)
 const barChartRef = ref<BarChartExposed | null>(null)
 const lineData = ref<any>(null)
 const barData = ref<any>(null)
-const chartData = ref({
-  labels: [
-    '12-01-2022',
-    '01-01-2023',
-    '02-01-2023',
-    '03-01-2023',
-    '04-01-2023',
-    '05-01-2023',
-    '06-01-2023',
-    '07-01-2023',
-    '08-01-2023',
-    '09-01-2023',
-    '10-01-2023',
-    '11-01-2023',
-    '12-01-2023',
-    '01-01-2024',
-    '02-01-2024',
-    '03-01-2024',
-    '04-01-2024',
-    '05-01-2024',
-    '06-01-2024',
-    '07-01-2024',
-    '08-01-2024',
-    '09-01-2024',
-    '10-01-2024',
-    '11-01-2024',
-    '12-01-2024',
-    '01-01-2025'
-  ],
-  datasets: [
-    // Indigo line
-    {
-      data: [
-        732, 610, 610, 504, 504, 504, 349, 349, 504, 342, 504, 610, 391, 192, 154, 273, 191, 191,
-        126, 263, 349, 252, 423, 622, 470, 532
-      ],
-      fill: true,
-      borderWidth: 2,
-      pointRadius: 0,
-      pointHoverRadius: 3,
-      pointBorderWidth: 0,
-      pointHoverBorderWidth: 0,
-      clip: 20,
-      tension: 0.2
-    },
-    // Gray line
-    {
-      data: [
-        532, 532, 532, 404, 404, 314, 314, 314, 314, 314, 234, 314, 234, 234, 314, 314, 314, 388,
-        314, 202, 202, 202, 202, 314, 720, 642
-      ],
-      borderWidth: 2,
-      pointRadius: 0,
-      pointHoverRadius: 3,
-      pointBorderWidth: 0,
-      pointHoverBorderWidth: 0,
-      clip: 20,
-      tension: 0.2
-    }
-  ]
-})
 
-onMounted( async () => {
+onMounted(async () => {
   // 显示 loading
   await nextTick()
   lineChartRef.value?.showLoading()
@@ -231,7 +170,6 @@ onMounted( async () => {
         left: '0%',
         right: '0%',
         bottom: '0%'
-        // containLabel: true
       },
       yAxis: {
         show: false,
@@ -242,7 +180,7 @@ onMounted( async () => {
           name: '今年',
           type: 'line',
           showAllSymbol: true,
-          symbolSize: 1,
+          symbolSize: 0,
           smooth: true,
           lineStyle: {
             normal: {
@@ -259,7 +197,7 @@ onMounted( async () => {
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                 {
                   offset: 0,
-                  color: '#8470ff'
+                  color: 'rgba(153, 132, 255, .4)'
                 },
                 {
                   offset: 0.8,
@@ -292,7 +230,7 @@ onMounted( async () => {
             borderColor: 'rgba(0,0,0,.4)'
           },
           itemStyle: {
-            color: 'rgba(25,163,223,1)',
+            color: '#dee0e3',
             borderColor: '#646ace',
             borderWidth: 2
           },

@@ -1,16 +1,17 @@
 <template>
-  <div ref="chartsRef" :style="{ width: width, height: height}"></div>
+  <div ref="chartsRef" :style="{ width: width, height: height }"></div>
 </template>
 
 <script setup lang="ts">
-import { ref, watch, nextTick, onMounted, onBeforeUnmount } from 'vue'
+import { ref, watch, nextTick, onMounted, onBeforeUnmount, computed } from 'vue'
 import * as echarts from 'echarts/core'
 import { GridComponent, GridComponentOption } from 'echarts/components'
 import { LineChart, LineSeriesOption } from 'echarts/charts'
 import { UniversalTransition } from 'echarts/features'
 import { CanvasRenderer } from 'echarts/renderers'
+import { TooltipComponent } from 'echarts/components'
 
-echarts.use([GridComponent, LineChart, CanvasRenderer, UniversalTransition])
+echarts.use([GridComponent, LineChart, CanvasRenderer, UniversalTransition, TooltipComponent])
 
 type EChartsOption = echarts.ComposeOption<GridComponentOption | LineSeriesOption>
 
@@ -19,8 +20,8 @@ defineOptions({
 })
 const props = defineProps({
   data: { type: Object, default: () => {} },
-  width: { type: [Number, String], default: 500 },
-  height: { type: [Number, String], default: 300 },
+  width: { type: String, default: '500px' },
+  height: { type: String, default: '300px' },
   type: { type: String, default: 'bar' }
 })
 
@@ -86,13 +87,6 @@ onBeforeUnmount(() => {
     chartInstance = null
   }
 })
-
-const containerStyle = computed(() => ({
-      width: typeof props.width === 'number' ? props.width + 'px' : props.width,
-      height: typeof props.height === 'number' ? props.height + 'px' : props.height
-    }))
-
-    watch([() => props.width, () => props.height], () => nextTick(() => chartInstance?.resize()))
 
 watch(
   () => props.data,
